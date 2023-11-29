@@ -31,7 +31,7 @@
     <Container class="javax.swing.JTabbedPane" name="tpJatek">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="6" y="-36" width="-1" height="310"/>
+          <AbsoluteConstraints x="6" y="-36" width="510" height="370"/>
         </Constraint>
       </Constraints>
 
@@ -56,9 +56,9 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="pnKalandor" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="pnStatok" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="36" max="32767" attributes="0"/>
+                      <EmptySpace pref="52" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -75,7 +75,7 @@
                               <Component id="pnStatok" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="8" max="32767" attributes="0"/>
+                      <EmptySpace pref="68" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -221,28 +221,25 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lblElsoKep" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="10" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jScrollPane1" min="-2" pref="216" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
                               <Component id="tbt66" min="-2" pref="89" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="tbt270" min="-2" pref="88" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jScrollPane1" min="-2" pref="216" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace pref="14" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="195" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="tbt270" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tbt66" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -250,7 +247,7 @@
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="19" max="32767" attributes="0"/>
                       <Component id="lblElsoKep" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -273,6 +270,7 @@
               <SubComponents>
                 <Component class="javax.swing.JTextArea" name="taElso">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="lineWrap" type="boolean" value="true"/>
                     <Property name="rows" type="int" value="5"/>
@@ -284,7 +282,7 @@
             </Container>
             <Component class="javax.swing.JToggleButton" name="tbt66">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jToggleButton6"/>
+                <Property name="text" type="java.lang.String" value="66."/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tbt66ActionPerformed"/>
@@ -292,7 +290,7 @@
             </Component>
             <Component class="javax.swing.JToggleButton" name="tbt270">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jToggleButton7"/>
+                <Property name="text" type="java.lang.String" value="270."/>
               </Properties>
             </Component>
           </SubComponents>
@@ -309,12 +307,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="512" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="510" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="279" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="339" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -332,16 +330,34 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       <Component id="lbl66" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="237" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="tbt56" linkSize="2" min="-2" pref="99" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="tbt293" linkSize="2" min="-2" pref="96" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="13" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="lbl66" min="-2" pref="335" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      <Component id="jScrollPane2" min="-2" pref="195" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="tbt56" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tbt293" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -353,6 +369,35 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/kepek/66. oldal.png"/>
                 </Property>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextArea" name="ta66">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                    <Property name="columns" type="int" value="20"/>
+                    <Property name="lineWrap" type="boolean" value="true"/>
+                    <Property name="rows" type="int" value="5"/>
+                    <Property name="text" type="java.lang.String" value="N&#xe9;h&#xe1;ny perc gyalogl&#xe1;s ut&#xe1;n egy el&#xe1;gaz&#xe1;shoz &#xe9;rsz az alag&#xfa;tban. Egy, a falra festett feh&#xe9;r ny&#xed;l nyugatfel&#xe9; mutat. A f&#xf6;ld&#xf6;n nedves l&#xe1;bnyomok jelzik, merre haladtak az el&#x151;tted j&#xe1;r&#xf3;k. Neh&#xe9;z biztosan megmondani, de &#xfa;gy t&#x171;nik, hogy h&#xe1;rom k&#xf6;z&#xfc;l&#xfc;k a ny&#xed;l ir&#xe1;ny&#xe1;ba halad, m&#xed;g egyik&#xfc;k &#xfa;gy d&#xf6;nt&#xf6;tt, hogy keletnek megy. Ha nyugat fel&#xe9; k&#xed;v&#xe1;nsz menni, lapozz a 293-ra. Ha keletnek, lapozz a 56-re."/>
+                    <Property name="wrapStyleWord" type="boolean" value="true"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JToggleButton" name="tbt56">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jToggleButton1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="tbt293">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jToggleButton2"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -368,7 +413,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="10" y="360" width="130" height="-1"/>
+          <AbsoluteConstraints x="10" y="350" width="130" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -381,7 +426,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="380" y="370" width="130" height="-1"/>
+          <AbsoluteConstraints x="380" y="350" width="130" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>

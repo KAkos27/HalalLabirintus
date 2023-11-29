@@ -3,6 +3,7 @@ package halalab;
 public class HalaLab extends javax.swing.JFrame {
 
     int mentes = 1;
+    boolean gombTilto = true;
 
     public HalaLab() {
 
@@ -33,6 +34,10 @@ public class HalaLab extends javax.swing.JFrame {
         pn270 = new javax.swing.JPanel();
         pn66 = new javax.swing.JPanel();
         lbl66 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ta66 = new javax.swing.JTextArea();
+        tbt56 = new javax.swing.JToggleButton();
+        tbt293 = new javax.swing.JToggleButton();
         btKalandlap = new javax.swing.JButton();
         btJatek = new javax.swing.JButton();
 
@@ -126,9 +131,9 @@ public class HalaLab extends javax.swing.JFrame {
             .addGroup(pnKalandlapLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pnKalandor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnStatok, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         pnKalandlapLayout.setVerticalGroup(
             pnKalandlapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,13 +145,14 @@ public class HalaLab extends javax.swing.JFrame {
                     .addGroup(pnKalandlapLayout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(pnStatok, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         tpJatek.addTab("Kalandlap", pnKalandlap);
 
         lblElsoKep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kepek/1. oldal.png"))); // NOI18N
 
+        taElso.setEditable(false);
         taElso.setColumns(20);
         taElso.setLineWrap(true);
         taElso.setRows(5);
@@ -154,14 +160,14 @@ public class HalaLab extends javax.swing.JFrame {
         taElso.setWrapStyleWord(true);
         jScrollPane1.setViewportView(taElso);
 
-        tbt66.setText("jToggleButton6");
+        tbt66.setText("66.");
         tbt66.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbt66ActionPerformed(evt);
             }
         });
 
-        tbt270.setText("jToggleButton7");
+        tbt270.setText("270.");
 
         javax.swing.GroupLayout pnElsoLayout = new javax.swing.GroupLayout(pnElso);
         pnElso.setLayout(pnElsoLayout);
@@ -170,29 +176,27 @@ public class HalaLab extends javax.swing.JFrame {
             .addGroup(pnElsoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblElsoKep)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addGroup(pnElsoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnElsoLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnElsoLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(pnElsoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(pnElsoLayout.createSequentialGroup()
                         .addComponent(tbt66, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(tbt270, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33))))
+                        .addComponent(tbt270, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         pnElsoLayout.setVerticalGroup(
             pnElsoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(pnElsoLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addGap(29, 29, 29)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnElsoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tbt270)
                     .addComponent(tbt66))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(pnElsoLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 19, Short.MAX_VALUE)
                 .addComponent(lblElsoKep))
         );
 
@@ -202,36 +206,65 @@ public class HalaLab extends javax.swing.JFrame {
         pn270.setLayout(pn270Layout);
         pn270Layout.setHorizontalGroup(
             pn270Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 512, Short.MAX_VALUE)
+            .addGap(0, 510, Short.MAX_VALUE)
         );
         pn270Layout.setVerticalGroup(
             pn270Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addGap(0, 339, Short.MAX_VALUE)
         );
 
         tpJatek.addTab("tab4", pn270);
 
         lbl66.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kepek/66. oldal.png"))); // NOI18N
 
+        ta66.setEditable(false);
+        ta66.setColumns(20);
+        ta66.setLineWrap(true);
+        ta66.setRows(5);
+        ta66.setText("Néhány perc gyaloglás után egy elágazáshoz érsz az alagútban. Egy, a falra festett fehér nyíl nyugatfelé mutat. A földön nedves lábnyomok jelzik, merre haladtak az előtted járók. Nehéz biztosan megmondani, de úgy tűnik, hogy három közülük a nyíl irányába halad, míg egyikük úgy döntött, hogy keletnek megy. Ha nyugat felé kívánsz menni, lapozz a 293-ra. Ha keletnek, lapozz a 56-re.");
+        ta66.setWrapStyleWord(true);
+        jScrollPane2.setViewportView(ta66);
+
+        tbt56.setText("jToggleButton1");
+
+        tbt293.setText("jToggleButton2");
+
         javax.swing.GroupLayout pn66Layout = new javax.swing.GroupLayout(pn66);
         pn66.setLayout(pn66Layout);
         pn66Layout.setHorizontalGroup(
             pn66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pn66Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
                 .addComponent(lbl66)
-                .addContainerGap(237, Short.MAX_VALUE))
+                .addGap(25, 25, 25)
+                .addGroup(pn66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pn66Layout.createSequentialGroup()
+                        .addComponent(tbt56, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tbt293, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
+
+        pn66Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {tbt293, tbt56});
+
         pn66Layout.setVerticalGroup(
             pn66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn66Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lbl66, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(pn66Layout.createSequentialGroup()
-                .addComponent(lbl66, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addGroup(pn66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tbt56)
+                    .addComponent(tbt293))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         tpJatek.addTab("tab3", pn66);
 
-        getContentPane().add(tpJatek, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, -36, -1, 310));
+        getContentPane().add(tpJatek, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, -36, 510, 370));
 
         btKalandlap.setText("KALANDLAP");
         btKalandlap.addActionListener(new java.awt.event.ActionListener() {
@@ -239,7 +272,7 @@ public class HalaLab extends javax.swing.JFrame {
                 btKalandlapActionPerformed(evt);
             }
         });
-        getContentPane().add(btKalandlap, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 130, -1));
+        getContentPane().add(btKalandlap, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 130, -1));
 
         btJatek.setText("JÁTÉK");
         btJatek.addActionListener(new java.awt.event.ActionListener() {
@@ -247,51 +280,50 @@ public class HalaLab extends javax.swing.JFrame {
                 btJatekActionPerformed(evt);
             }
         });
-        getContentPane().add(btJatek, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 370, 130, -1));
+        getContentPane().add(btJatek, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, 130, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btKalandlapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btKalandlapActionPerformed
-        
-        tpJatek.setSelectedIndex(0);
         mentes = tpJatek.getSelectedIndex();
+        gombTilto = true;
+        tpJatek.setSelectedIndex(0);
         
-        if (mentes > 0) {
-            btKalandlap.setEnabled(true);
-        } else if (mentes == 0) {
+        if (gombTilto == true) {
+            btJatek.setEnabled(true);
             btKalandlap.setEnabled(false);
+        } else if (gombTilto == false) {
+            btJatek.setEnabled(false);
+            btKalandlap.setEnabled(true);
         }
         
     }//GEN-LAST:event_btKalandlapActionPerformed
 
     private void btJatekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btJatekActionPerformed
         tpJatek.setSelectedIndex(mentes);
-        if (mentes > 0) {
-            btKalandlap.setEnabled(true);
-        } else if (mentes == 0) {
-            btKalandlap.setEnabled(false);
-        }
+        gombTilto = false;
         
+        if (gombTilto == true) {
+            btJatek.setEnabled(true);
+            btKalandlap.setEnabled(false);
+        } else if (gombTilto == false) {
+            btJatek.setEnabled(false);
+            btKalandlap.setEnabled(true);
+        }
     }//GEN-LAST:event_btJatekActionPerformed
 
     private void tbt66ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbt66ActionPerformed
-        
         tpJatek.setSelectedIndex(3);
-        mentes = tpJatek.getSelectedIndex();
-        if (mentes > 0) {
-            btKalandlap.setEnabled(true);
-        } else if (mentes == 0) {
-            btKalandlap.setEnabled(false);
-        }
-       
     }//GEN-LAST:event_tbt66ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        if (mentes > 0) {
-            btKalandlap.setEnabled(true);
-        } else if (mentes == 0) {
+        if (gombTilto == true) {
+            btJatek.setEnabled(true);
             btKalandlap.setEnabled(false);
+        } else if (gombTilto == false) {
+            btJatek.setEnabled(false);
+            btKalandlap.setEnabled(true);
         }
     }//GEN-LAST:event_formWindowOpened
 
@@ -330,6 +362,7 @@ public class HalaLab extends javax.swing.JFrame {
     private javax.swing.JButton btJatek;
     private javax.swing.JButton btKalandlap;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lbl66;
     private javax.swing.JLabel lblEletero;
     private javax.swing.JLabel lblElsoKep;
@@ -342,8 +375,11 @@ public class HalaLab extends javax.swing.JFrame {
     private javax.swing.JPanel pnKalandlap;
     private javax.swing.JPanel pnKalandor;
     private javax.swing.JPanel pnStatok;
+    private javax.swing.JTextArea ta66;
     private javax.swing.JTextArea taElso;
     private javax.swing.JToggleButton tbt270;
+    private javax.swing.JToggleButton tbt293;
+    private javax.swing.JToggleButton tbt56;
     private javax.swing.JToggleButton tbt66;
     private javax.swing.JToggleButton tbtEletero;
     private javax.swing.JToggleButton tbtSzerencse;
