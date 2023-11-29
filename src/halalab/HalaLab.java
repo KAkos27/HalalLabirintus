@@ -253,8 +253,9 @@ public class HalaLab extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btKalandlapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btKalandlapActionPerformed
-        mentes = tpJatek.getSelectedIndex();
+        
         tpJatek.setSelectedIndex(0);
+        mentes = tpJatek.getSelectedIndex();
         
         if (mentes > 0) {
             btKalandlap.setEnabled(true);
@@ -275,9 +276,9 @@ public class HalaLab extends javax.swing.JFrame {
     }//GEN-LAST:event_btJatekActionPerformed
 
     private void tbt66ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbt66ActionPerformed
-        mentes = tpJatek.getSelectedIndex();
-        tpJatek.setSelectedIndex(3);
         
+        tpJatek.setSelectedIndex(3);
+        mentes = tpJatek.getSelectedIndex();
         if (mentes > 0) {
             btKalandlap.setEnabled(true);
         } else if (mentes == 0) {
