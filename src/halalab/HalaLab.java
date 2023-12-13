@@ -3,6 +3,7 @@ package halalab;
 import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.YES_NO_OPTION;
 
 public class HalaLab extends javax.swing.JFrame {
 
@@ -12,7 +13,7 @@ public class HalaLab extends javax.swing.JFrame {
     int eletero = 12;
     int szerencse = 6;
     int tamadoero = 0;
-    int barlangiEletero = 7;
+    int barlangiEletero = 27;
     int barlangiUgyesseg = 7;
     int barlangiTamadoero = 0;
     int arany = 0;
@@ -276,7 +277,7 @@ public class HalaLab extends javax.swing.JFrame {
                     .addComponent(tbt66))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(pnElsoLayout.createSequentialGroup()
-                .addGap(0, 19, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(lblElsoKep))
         );
 
@@ -319,7 +320,7 @@ public class HalaLab extends javax.swing.JFrame {
             pn270Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pn270Layout.createSequentialGroup()
                 .addComponent(lbl270)
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(pn270Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jScrollPane3)
@@ -440,7 +441,7 @@ public class HalaLab extends javax.swing.JFrame {
                             .addComponent(tbt373)
                             .addComponent(tbt215)))
                     .addComponent(lbl56))
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         tpJatek.addTab("tab5", pn56);
@@ -499,7 +500,7 @@ public class HalaLab extends javax.swing.JFrame {
                         .addGroup(pn293Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tbt137)
                             .addComponent(tbt387))))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tpJatek.addTab("tab6", pn293);
@@ -528,7 +529,7 @@ public class HalaLab extends javax.swing.JFrame {
             pn215Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pn215Layout.createSequentialGroup()
                 .addComponent(lbl215)
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(pn215Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -561,7 +562,7 @@ public class HalaLab extends javax.swing.JFrame {
             pn373Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pn373Layout.createSequentialGroup()
                 .addComponent(lbl373)
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(pn373Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -642,18 +643,19 @@ public class HalaLab extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pn387Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(pn387Layout.createSequentialGroup()
-                                .addGroup(pn387Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pn387Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(pn387Layout.createSequentialGroup()
+                                    .addComponent(lblRoberto)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblRobHp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pn387Layout.createSequentialGroup()
                                     .addComponent(lblbarlangi)
-                                    .addComponent(lblRoberto))
-                                .addGap(63, 63, 63)
-                                .addGroup(pn387Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblBarHp, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblRobHp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                    .addGap(53, 53, 53)
+                                    .addComponent(lblBarHp, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(pn387Layout.createSequentialGroup()
                         .addGap(73, 73, 73)
                         .addComponent(btHarc)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
 
         pn387Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblBarHp, lblRobHp});
@@ -661,24 +663,21 @@ public class HalaLab extends javax.swing.JFrame {
         pn387Layout.setVerticalGroup(
             pn387Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn387Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pn387Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(pn387Layout.createSequentialGroup()
                         .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(pn387Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pn387Layout.createSequentialGroup()
-                                .addComponent(lblbarlangi)
-                                .addGap(26, 26, 26)
-                                .addComponent(btHarc)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblRoberto)
-                                .addGap(20, 20, 20))
-                            .addGroup(pn387Layout.createSequentialGroup()
-                                .addComponent(lblBarHp, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(81, 81, 81)
-                                .addComponent(lblRobHp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(pn387Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblbarlangi)
+                            .addComponent(lblBarHp, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26)
+                        .addComponent(btHarc)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(pn387Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblRoberto)
+                            .addComponent(lblRobHp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(20, 20, 20))
                     .addGroup(pn387Layout.createSequentialGroup()
                         .addComponent(lbl387)
                         .addContainerGap())))
@@ -713,18 +712,18 @@ public class HalaLab extends javax.swing.JFrame {
         mentes = tpJatek.getSelectedIndex();
         gombTilto = true;
         tpJatek.setSelectedIndex(0);
-        
+
         gombtiltas();
     }//GEN-LAST:event_btKalandlapActionPerformed
 
     private void btJatekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btJatekActionPerformed
-        boolean statMegadva =tbtUgyesseg.isSelected() & tbtEletero.isSelected() & tbtSzerencse.isSelected();
-        if (statMegadva){
+        boolean statMegadva = tbtUgyesseg.isSelected() & tbtEletero.isSelected() & tbtSzerencse.isSelected();
+        if (statMegadva) {
             tpJatek.setSelectedIndex(mentes);
             gombTilto = false;
 
             gombtiltas();
-        }else{
+        } else {
             JOptionPane.showMessageDialog(rootPane, "Nem számoltad ki a statjaidat!");
         }
     }//GEN-LAST:event_btJatekActionPerformed
@@ -766,7 +765,7 @@ public class HalaLab extends javax.swing.JFrame {
         ImageIcon kep = new ImageIcon("270. oldal 2.png");
         JOptionPane.showMessageDialog(rootPane, "Hurrá!!!\nSzerztél 2 aranyat!", "Jutalom", HEIGHT, kep);
         arany += 2;
-        lblArany.setText(arany+"");
+        lblArany.setText(arany + "");
     }//GEN-LAST:event_tbt270ActionPerformed
 
     private void tbt270tol66ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbt270tol66ActionPerformed
@@ -782,11 +781,11 @@ public class HalaLab extends javax.swing.JFrame {
     }//GEN-LAST:event_tbt293ActionPerformed
 
     private void tbt215ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbt215ActionPerformed
-       tpJatek.setSelectedIndex(6);
-       ImageIcon kep = new ImageIcon("215. oldal 2.png");
-       JOptionPane.showMessageDialog(rootPane, "Vesztettél 2 életerőt!", "Vigyázz!", HEIGHT, kep);
-       eletero -= 2;
-       lblEletero.setText(eletero+"");
+        tpJatek.setSelectedIndex(6);
+        ImageIcon kep = new ImageIcon("215. oldal 2.png");
+        JOptionPane.showMessageDialog(rootPane, "Vesztettél 2 életerőt!", "Vigyázz!", HEIGHT, kep);
+        eletero -= 2;
+        lblEletero.setText(eletero + "");
     }//GEN-LAST:event_tbt215ActionPerformed
 
     private void tbt373ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbt373ActionPerformed
@@ -799,53 +798,82 @@ public class HalaLab extends javax.swing.JFrame {
 
     private void tbt387ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbt387ActionPerformed
         tpJatek.setSelectedIndex(9);
-        lblBarHp.setText("Életerő: "+barlangiEletero);
-        lblRobHp.setText("Életerő: "+eletero);
+        lblBarHp.setText("Életerő: " + barlangiEletero);
+        lblRobHp.setText("Életerő: " + eletero);
     }//GEN-LAST:event_tbt387ActionPerformed
 
     private void btHarcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHarcActionPerformed
         int elsoDobas = statKiiras(7);
         int masodikDobas = statKiiras(7);
+        int sebzes = -2;
+        int barlangiSebzes = 2;
         barlangiTamadoero = elsoDobas + barlangiUgyesseg;
         tamadoero = masodikDobas + ugyesseg;
-        String harcSzoveg = "Barlangi Ember támadóereje: "+barlangiTamadoero+"\nRoberto, a Kalandor támadóereje: "+tamadoero;
+        String harcSzoveg = "Barlangi Ember támadóereje: " + barlangiTamadoero + "\nRoberto, a Kalandor támadóereje: " + tamadoero;
         boolean robertoNagyobb = tamadoero > barlangiTamadoero;
         boolean egyenlo = tamadoero == barlangiTamadoero;
-        
-        
+
         ImageIcon blokk = new ImageIcon("blokk.png");
         ImageIcon robnyer = new ImageIcon("robnyer.png");
         ImageIcon barnyer = new ImageIcon("barnyer.png");
         ImageIcon veresegKep = new ImageIcon("gameover.png");
         ImageIcon gyozelemKep = new ImageIcon("victory.png");
-        
-        if (egyenlo){
-            JOptionPane.showMessageDialog(rootPane, harcSzoveg+"\nBlokkoltátok egymás támadását!", "Harc!!!", HEIGHT,blokk);
-        }else if(robertoNagyobb){
-            JOptionPane.showMessageDialog(rootPane, harcSzoveg+"\nMegsebezted a Barlangi Embert!", "Harc!!!", HEIGHT,robnyer);
-            barlangiEletero -= 1;
-            boolean gyozelem = barlangiEletero == 0;
-            lblBarHp.setText("Életerő: "+barlangiEletero);
-            if(gyozelem){
-                JOptionPane.showMessageDialog(rootPane, "Nyertél!","Győzelem",HEIGHT,gyozelemKep);
-                btHarc.setEnabled(false);
-            }
-        }else if(!robertoNagyobb){
-            JOptionPane.showMessageDialog(rootPane, harcSzoveg+"\nMegsebzett a Barlangi Ember!", "Harc!!!", HEIGHT,barnyer);
-            eletero -= 1;
-            boolean vereseg = eletero == 0;
-            lblRobHp.setText("Életerő: "+eletero);
-            lblEletero.setText(eletero+"");
-            if(vereseg){
-                JOptionPane.showMessageDialog(rootPane, "Vesztettél!","Vereség",HEIGHT,veresegKep);
-                System.exit(0);
+
+        if (egyenlo) {
+            JOptionPane.showMessageDialog(rootPane, harcSzoveg + "\nBlokkoltátok egymás támadását!", "Harc!!!", HEIGHT, blokk);
+        } else if (robertoNagyobb) {
+            int szerencseHasznalat = JOptionPane.showConfirmDialog(rootPane, harcSzoveg + "\nMegsebezted a Barlangi Embert!", "Harc!!!", YES_NO_OPTION, HEIGHT, robnyer);
+            if (szerencseHasznalat == 0) {
+                
+                int szerencseDobas = statKiiras(13);
+                if (szerencseDobas < szerencse){
+                    JOptionPane.showMessageDialog(rootPane, "Szerncse");
+                    sebzes -=1;
+                }else{
+                    JOptionPane.showMessageDialog(rootPane, "balszerencse");
+                    sebzes +=1;
+                }
+                szerencse -= 1;
+                lblSzerencse.setText(szerencse + "");
                 
             }
+            barlangiEletero += sebzes;
+            boolean gyozelem = barlangiEletero < 1;
+            lblBarHp.setText("Életerő: " + barlangiEletero);
+            if (gyozelem) {
+                JOptionPane.showMessageDialog(rootPane, "Nyertél!", "Győzelem", HEIGHT, gyozelemKep);
+                btHarc.setEnabled(false);
+            }
+
+        } else if (!robertoNagyobb) {
+            int szerencseHasznalat = JOptionPane.showConfirmDialog(rootPane, harcSzoveg + "\nMegsebzett a Barlangi Ember!", "Harc!!!", YES_NO_OPTION, HEIGHT, barnyer);
+            if (szerencseHasznalat == 0) {
+                
+                int szerencseDobas = statKiiras(13);
+                if (szerencseDobas < szerencse){
+                    JOptionPane.showMessageDialog(rootPane, "Szerncse");
+                    barlangiSebzes -=1;
+                }else{
+                    JOptionPane.showMessageDialog(rootPane, "balszerencse");
+                    barlangiSebzes +=1;
+                }
+                szerencse -= 1;
+                lblSzerencse.setText(szerencse + "");
+      
+            }
+            eletero -= barlangiSebzes;
+            boolean vereseg = eletero < 1;
+            lblRobHp.setText("Életerő: " + eletero);
+            lblEletero.setText(eletero + "");
+            if (vereseg) {
+                JOptionPane.showMessageDialog(rootPane, "Vesztettél!", "Vereség", HEIGHT, veresegKep);
+                System.exit(0);
+
+            }
         }
-        
-        
-        
+
     }//GEN-LAST:event_btHarcActionPerformed
+
     public int statKiiras(int max) {
         Random rand = new Random();
         int dobas = rand.nextInt(max);
@@ -862,6 +890,7 @@ public class HalaLab extends javax.swing.JFrame {
         }
         return 0;
     }
+
     private void gombtiltas() {
         if (gombTilto == true) {
             btJatek.setEnabled(true);
