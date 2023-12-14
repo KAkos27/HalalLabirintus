@@ -19,6 +19,12 @@ public class HalaLab extends javax.swing.JFrame {
     int arany = 0;
 
     public HalaLab() {
+        ImageIcon labKep = new ImageIcon("labirintus.png");
+        String udvozloSzvoeg = "Üdvözöllek a Halál Labirintusban, kalandor.";
+        String udvozloCim = "Halál Labirintus";
+        
+        JOptionPane.showMessageDialog(rootPane, udvozloSzvoeg,udvozloCim,HEIGHT,labKep);
+        
         initComponents();
     }
 
@@ -47,9 +53,8 @@ public class HalaLab extends javax.swing.JFrame {
         tbt270 = new javax.swing.JToggleButton();
         pn270 = new javax.swing.JPanel();
         lbl270 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        ta270 = new javax.swing.JTextArea();
         tbt270tol66 = new javax.swing.JToggleButton();
+        btKinyit = new javax.swing.JButton();
         pn66 = new javax.swing.JPanel();
         lbl66 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -93,6 +98,7 @@ public class HalaLab extends javax.swing.JFrame {
         btJatek = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Halál Labirintus");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -264,39 +270,40 @@ public class HalaLab extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(tbt270, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
         pnElsoLayout.setVerticalGroup(
             pnElsoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(pnElsoLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnElsoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tbt270)
-                    .addComponent(tbt66))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(pnElsoLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblElsoKep))
+                .addGroup(pnElsoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnElsoLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnElsoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tbt270)
+                            .addComponent(tbt66)))
+                    .addGroup(pnElsoLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(lblElsoKep)))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         tpJatek.addTab("Játék", pnElso);
 
         lbl270.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kepek/270. oldal 1.png"))); // NOI18N
 
-        ta270.setEditable(false);
-        ta270.setColumns(20);
-        ta270.setLineWrap(true);
-        ta270.setRows(5);
-        ta270.setText("A doboz teteje könnyedén nyílik. Benne két aranypénzt találsz, és egy üzenetet, amely egy kis pergamenen neked szól. Előbb zsebre vágod az aranyakat, aztán elolvasod az üzenetet: - „Jól tetted. Legalább volt annyi eszed, hogy megállj és elfogadd az ajándékot. Most azt tanácsolom neked, hogy keress és használj különféle tárgyakat, ha sikerrel akarsz áthaladni Halállabirintusomon.” Azaláírás Szukumvit. Megjegyzed a tanácsot, apródarabokra téped a pergament, és tovább mészészak felé. Lapozz a 66-ra.");
-        ta270.setWrapStyleWord(true);
-        jScrollPane3.setViewportView(ta270);
-
         tbt270tol66.setText("66.");
         tbt270tol66.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbt270tol66ActionPerformed(evt);
+            }
+        });
+
+        btKinyit.setText("Kinyit");
+        btKinyit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btKinyitActionPerformed(evt);
             }
         });
 
@@ -306,27 +313,23 @@ public class HalaLab extends javax.swing.JFrame {
             pn270Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pn270Layout.createSequentialGroup()
                 .addComponent(lbl270)
-                .addGroup(pn270Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pn270Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn270Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(tbt270tol66, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(73, 73, 73))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btKinyit, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(tbt270tol66, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         pn270Layout.setVerticalGroup(
             pn270Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pn270Layout.createSequentialGroup()
                 .addComponent(lbl270)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 49, Short.MAX_VALUE))
             .addGroup(pn270Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jScrollPane3)
-                .addGap(18, 18, 18)
-                .addComponent(tbt270tol66)
-                .addGap(29, 29, 29))
+                .addGap(17, 17, 17)
+                .addGroup(pn270Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btKinyit)
+                    .addComponent(tbt270tol66))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tpJatek.addTab("tab4", pn270);
@@ -360,8 +363,9 @@ public class HalaLab extends javax.swing.JFrame {
         pn66Layout.setHorizontalGroup(
             pn66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pn66Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(lbl66)
-                .addGap(25, 25, 25)
+                .addGap(19, 19, 19)
                 .addGroup(pn66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pn66Layout.createSequentialGroup()
@@ -375,17 +379,19 @@ public class HalaLab extends javax.swing.JFrame {
 
         pn66Layout.setVerticalGroup(
             pn66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn66Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbl66, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(pn66Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addGroup(pn66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tbt56)
-                    .addComponent(tbt293))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(pn66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pn66Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addGroup(pn66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tbt56)
+                            .addComponent(tbt293)))
+                    .addGroup(pn66Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lbl66, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 21, Short.MAX_VALUE))
         );
 
         tpJatek.addTab("tab3", pn66);
@@ -644,18 +650,18 @@ public class HalaLab extends javax.swing.JFrame {
                         .addGroup(pn387Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pn387Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(pn387Layout.createSequentialGroup()
-                                    .addComponent(lblRoberto)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lblRobHp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pn387Layout.createSequentialGroup()
                                     .addComponent(lblbarlangi)
-                                    .addGap(53, 53, 53)
-                                    .addComponent(lblBarHp, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblBarHp, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pn387Layout.createSequentialGroup()
+                                    .addComponent(lblRoberto)
+                                    .addGap(29, 29, 29)
+                                    .addComponent(lblRobHp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(pn387Layout.createSequentialGroup()
                         .addGap(73, 73, 73)
                         .addComponent(btHarc)))
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pn387Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblBarHp, lblRobHp});
@@ -663,24 +669,24 @@ public class HalaLab extends javax.swing.JFrame {
         pn387Layout.setVerticalGroup(
             pn387Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn387Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pn387Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(pn387Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pn387Layout.createSequentialGroup()
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap()
+                        .addComponent(jScrollPane9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pn387Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblbarlangi)
                             .addComponent(lblBarHp, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(26, 26, 26)
-                        .addComponent(btHarc)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(pn387Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblRoberto)
-                            .addComponent(lblRobHp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(20, 20, 20))
+                        .addGap(18, 18, 18)
+                        .addComponent(btHarc))
                     .addGroup(pn387Layout.createSequentialGroup()
                         .addComponent(lbl387)
-                        .addContainerGap())))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
+                .addGroup(pn387Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblRoberto)
+                    .addComponent(lblRobHp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(20, 20, 20))
         );
 
         pn387Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblBarHp, lblRobHp});
@@ -762,10 +768,7 @@ public class HalaLab extends javax.swing.JFrame {
 
     private void tbt270ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbt270ActionPerformed
         tpJatek.setSelectedIndex(2);
-        ImageIcon kep = new ImageIcon("270. oldal 2.png");
-        JOptionPane.showMessageDialog(rootPane, "Hurrá!!!\nSzerztél 2 aranyat!", "Jutalom", HEIGHT, kep);
-        arany += 2;
-        lblArany.setText(arany + "");
+        tbt270tol66.setEnabled(false);
     }//GEN-LAST:event_tbt270ActionPerformed
 
     private void tbt270tol66ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbt270tol66ActionPerformed
@@ -814,7 +817,7 @@ public class HalaLab extends javax.swing.JFrame {
         String cim = "Harc!!!";
         String harcSzoveg = "Barlangi Ember támadóereje: " + barlangiTamadoero + "\nRoberto, a Kalandor támadóereje: " + tamadoero;
         String robNyerSzoveg = "\nMeg fogod sebezni a barlangi embert!\nPróbára teszed a szerencséd?";
-        String barNyerSzoveg = "\nMeg fog sebezni a barlngi ember!\nPróbára teszed a szerencséd?";
+        String barNyerSzoveg = "\nMeg fog sebezni a barlangi ember!\nPróbára teszed a szerencséd?";
         
         boolean robertoNagyobb = tamadoero > barlangiTamadoero;
         boolean egyenlo = tamadoero == barlangiTamadoero;
@@ -867,9 +870,20 @@ public class HalaLab extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btHarcActionPerformed
 
+    private void btKinyitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btKinyitActionPerformed
+        ImageIcon kep = new ImageIcon("270. oldal 2.png");
+        String ladaSzoveg = "A doboz teteje könnyedén nyílik. Benne két aranypénzt találsz,\nés egy üzenetet, amely egy kis pergamenen neked szól.\nElőbb zsebre vágod az aranyakat, aztán elolvasod az üzenetet:\n- „Jól tetted. Legalább volt annyi eszed, hogy megállj és\nelfogadd az ajándékot. Most azt tanácsolom neked, hogy keress\nés használj különféle tárgyakat, ha sikerrel akarsz áthaladni\nHalállabirintusomon.” Azaláírás Szukumvit. Megjegyzed a tanácsot,\napródarabokra téped a pergament, és tovább mészészak felé.\nLapozz a 66-ra.";
+        JOptionPane.showMessageDialog(rootPane, ladaSzoveg, "Jutalom", HEIGHT, kep);
+        arany += 2;
+        lblArany.setText(arany + "");
+        btKinyit.setEnabled(false);
+        tbt270tol66.setEnabled(true);
+    }//GEN-LAST:event_btKinyitActionPerformed
+
     public int szerencseKalkulacio(int sebzes){
         ImageIcon szerencseKep = new ImageIcon("szerencse.png");
         ImageIcon balSZerencseKep = new ImageIcon("balszerencse.png");
+        
         int szerencseDobas = statKiiras(13);
         if (szerencseDobas < szerencse){
             JOptionPane.showMessageDialog(rootPane, "Szerencse","Szerencse",HEIGHT,szerencseKep);
@@ -943,9 +957,9 @@ public class HalaLab extends javax.swing.JFrame {
     private javax.swing.JButton btHarc;
     private javax.swing.JButton btJatek;
     private javax.swing.JButton btKalandlap;
+    private javax.swing.JButton btKinyit;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
@@ -982,7 +996,6 @@ public class HalaLab extends javax.swing.JFrame {
     private javax.swing.JPanel pnKalandlap;
     private javax.swing.JPanel pnKalandor;
     private javax.swing.JPanel pnStatok;
-    private javax.swing.JTextArea ta270;
     private javax.swing.JTextArea ta293;
     private javax.swing.JTextArea ta373;
     private javax.swing.JTextArea ta374;
