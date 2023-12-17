@@ -13,7 +13,7 @@ public class HalaLab extends javax.swing.JFrame {
     int eletero = 12;
     int szerencse = 6;
     int tamadoero = 0;
-    int barlangiEletero = 7;
+    int barlangiEletero = 227;
     int barlangiUgyesseg = 7;
     int barlangiTamadoero = 0;
     int arany = 0;
@@ -785,8 +785,6 @@ public class HalaLab extends javax.swing.JFrame {
 
     private void tbt215ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbt215ActionPerformed
         tpJatek.setSelectedIndex(6);
-        ImageIcon kep = new ImageIcon("215. oldal 2.png");
-        JOptionPane.showMessageDialog(rootPane, "Vesztettél 2 életerőt!", "Vigyázz!", HEIGHT, kep);
         eletero -= 2;
         lblEletero.setText(eletero + "");
     }//GEN-LAST:event_tbt215ActionPerformed
@@ -832,12 +830,14 @@ public class HalaLab extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, harcSzoveg + "\nBlokkoltátok egymás támadását!", cim, HEIGHT, blokk);
         } else if (robertoNagyobb) {
             int szerencseHasznalat = JOptionPane.showConfirmDialog(rootPane, harcSzoveg + robNyerSzoveg, cim, YES_NO_OPTION, HEIGHT, robnyer);
-            if (szerencseHasznalat == 0) {
+            if (szerencseHasznalat == 0 & szerencse > 0) {
                 
                 sebzes = szerencseKalkulacio(sebzes);
                 szerencse -= 1;
                 lblSzerencse.setText(szerencse + "");
                 
+            }else if (szerencseHasznalat == 0 & szerencse < 1){
+                System.out.println("N");
             }
             barlangiEletero += sebzes;
             lblBarHp.setText("Életerő: " + barlangiEletero);
