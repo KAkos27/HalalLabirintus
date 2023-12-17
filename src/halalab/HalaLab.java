@@ -15,7 +15,7 @@ public class HalaLab extends javax.swing.JFrame {
     int szerencse = 6;
     int tamadoero = 0;
     int barlangiEletero = 7;
-    int barlangiUgyesseg = 7;
+    int barlangiUgyesseg = 27;
     int barlangiTamadoero = 0;
     int arany = 0;
 
@@ -23,9 +23,9 @@ public class HalaLab extends javax.swing.JFrame {
         ImageIcon labKep = new ImageIcon("labirintus.png");
         String udvozloSzvoeg = "Üdvözöllek a Halál Labirintusban, kalandor.";
         String udvozloCim = "Halál Labirintus";
-        
-        JOptionPane.showMessageDialog(rootPane, udvozloSzvoeg,udvozloCim,HEIGHT,labKep);
-        
+
+        JOptionPane.showMessageDialog(rootPane, udvozloSzvoeg, udvozloCim, HEIGHT, labKep);
+
         initComponents();
     }
 
@@ -813,55 +813,74 @@ public class HalaLab extends javax.swing.JFrame {
         int masodikDobas = statKiiras(7);
         int sebzes = -2;
         int barlangiSebzes = 2;
-        
+
         barlangiTamadoero = elsoDobas + barlangiUgyesseg;
         tamadoero = masodikDobas + ugyesseg;
-        
+
         String cim = "Harc!!!";
         String harcSzoveg = "Barlangi Ember támadóereje: " + barlangiTamadoero + "\nRoberto, a Kalandor támadóereje: " + tamadoero;
         String robNyerSzoveg = "\nMeg fogod sebezni a barlangi embert!\nPróbára teszed a szerencséd?";
         String barNyerSzoveg = "\nMeg fog sebezni a barlangi ember!\nPróbára teszed a szerencséd?";
         String gyozSzoveg = "Nyertél!";
         String verSzoveg = "Vesztettél!";
-        String barHpKiiras = "Életerő: " + barlangiEletero;
-        String hpKiiras = "Életerő: " + eletero;
-        String kalandlapHpKiiras = eletero + "";
-        
+
         boolean robertoNagyobb = tamadoero > barlangiTamadoero;
         boolean egyenlo = tamadoero == barlangiTamadoero;
-        
+
         ImageIcon blokk = new ImageIcon("blokk.png");
         ImageIcon robnyer = new ImageIcon("robnyer.png");
         ImageIcon barnyer = new ImageIcon("barnyer.png");
         ImageIcon veresegKep = new ImageIcon("gameover.png");
         ImageIcon gyozelemKep = new ImageIcon("victory.png");
-        
+
         if (egyenlo) {
             JOptionPane.showMessageDialog(rootPane, harcSzoveg + "\nBlokkoltátok egymás támadását!", cim, HEIGHT, blokk);
         } else if (robertoNagyobb) {
             sebzes = harcKimenetelek(harcSzoveg, robNyerSzoveg, cim, robnyer, sebzes);
-            
+
             barlangiEletero += sebzes;
+
+            String hpKiiras = "Életerő: " + eletero;
+            String barHpKiiras = "Életerő: " + barlangiEletero;
+            String kalandlapHpKiiras = eletero + "";
+
             lblBarHp.setText(barHpKiiras);
-            lblEletero.setText(kalandlapHpKiiras);
-            
-            boolean vege = barlangiEletero < 1;
-            if (vege) {
-                JOptionPane.showMessageDialog(rootPane, gyozSzoveg, cim, HEIGHT, gyozelemKep);
-                System.exit(0);
-            }
-            
-        } else if (!robertoNagyobb) {
-            barlangiSebzes = harcKimenetelek(harcSzoveg, barNyerSzoveg, cim, barnyer, barlangiSebzes);
-            
-            eletero -= barlangiSebzes;
             lblRobHp.setText(hpKiiras);
             lblEletero.setText(kalandlapHpKiiras);
-            
-            boolean vege = eletero < 1;
+
+            boolean vege = eletero < 1 || barlangiEletero < 1;
             if (vege) {
-                JOptionPane.showMessageDialog(rootPane, verSzoveg, cim, HEIGHT, veresegKep);
-                System.exit(0);
+                if (eletero < barlangiEletero){
+                    JOptionPane.showMessageDialog(rootPane, verSzoveg, cim, HEIGHT, veresegKep);
+                    System.exit(0);
+                }else{
+                    JOptionPane.showMessageDialog(rootPane, gyozSzoveg, cim, HEIGHT, gyozelemKep);
+                    System.exit(0);
+                }
+            }
+
+        } else if (!robertoNagyobb) {
+            barlangiSebzes = harcKimenetelek(harcSzoveg, barNyerSzoveg, cim, barnyer, barlangiSebzes);
+
+            eletero -= barlangiSebzes;
+
+            String hpKiiras = "Életerő: " + eletero;
+            String barHpKiiras = "Életerő: " + barlangiEletero;
+            String kalandlapHpKiiras = eletero + "";
+
+            lblBarHp.setText(barHpKiiras);
+            lblRobHp.setText(hpKiiras);
+            lblEletero.setText(kalandlapHpKiiras);
+
+            boolean vege = eletero < 1 || barlangiEletero < 1;
+            if (vege) {
+                if (eletero < barlangiEletero){
+                    JOptionPane.showMessageDialog(rootPane, verSzoveg, cim, HEIGHT, veresegKep);
+                    System.exit(0);
+                }else{
+                    JOptionPane.showMessageDialog(rootPane, gyozSzoveg, cim, HEIGHT, gyozelemKep);
+                    System.exit(0);
+                }
             }
         }
     }
@@ -871,12 +890,12 @@ public class HalaLab extends javax.swing.JFrame {
         boolean vanSzerencse = szerencseHasznalat == 0 & szerencse > 0;
         boolean nincsSzerencse = szerencseHasznalat == 0 & szerencse < 1;
         if (vanSzerencse) {
-            
+
             barlangiSebzes = szerencseKalkulacio(barlangiSebzes);
             szerencse -= 1;
             lblSzerencse.setText(szerencse + "");
-            
-        }else if (nincsSzerencse){
+
+        } else if (nincsSzerencse) {
             System.out.println("N");
         }
         return barlangiSebzes;
@@ -892,17 +911,17 @@ public class HalaLab extends javax.swing.JFrame {
         tbt270tol66.setEnabled(true);
     }//GEN-LAST:event_btKinyitActionPerformed
 
-    public int szerencseKalkulacio(int sebzes){
+    public int szerencseKalkulacio(int sebzes) {
         ImageIcon szerencseKep = new ImageIcon("szerencse.png");
         ImageIcon balSZerencseKep = new ImageIcon("balszerencse.png");
-        
+
         int szerencseDobas = statKiiras(13);
-        if (szerencseDobas < szerencse){
-            JOptionPane.showMessageDialog(rootPane, "Szerencse","Szerencse",HEIGHT,szerencseKep);
-            sebzes -=1;
-        }else{
-            JOptionPane.showMessageDialog(rootPane, "balszerencse","balszerencse",HEIGHT,balSZerencseKep);
-            sebzes +=1;
+        if (szerencseDobas < szerencse) {
+            JOptionPane.showMessageDialog(rootPane, "Szerencse", "Szerencse", HEIGHT, szerencseKep);
+            sebzes -= 1;
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "balszerencse", "balszerencse", HEIGHT, balSZerencseKep);
+            sebzes += 1;
         }
         return sebzes;
     }
