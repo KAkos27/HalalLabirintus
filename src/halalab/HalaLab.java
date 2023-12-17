@@ -1,5 +1,6 @@
 package halalab;
 
+import java.awt.HeadlessException;
 import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -13,7 +14,7 @@ public class HalaLab extends javax.swing.JFrame {
     int eletero = 12;
     int szerencse = 6;
     int tamadoero = 0;
-    int barlangiEletero = 227;
+    int barlangiEletero = 7;
     int barlangiUgyesseg = 7;
     int barlangiTamadoero = 0;
     int arany = 0;
@@ -804,6 +805,10 @@ public class HalaLab extends javax.swing.JFrame {
     }//GEN-LAST:event_tbt387ActionPerformed
 
     private void btHarcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHarcActionPerformed
+        harcRendszer();
+    }//GEN-LAST:event_btHarcActionPerformed
+
+    private void harcRendszer() throws HeadlessException {
         int elsoDobas = statKiiras(7);
         int masodikDobas = statKiiras(7);
         int sebzes = -2;
@@ -816,59 +821,66 @@ public class HalaLab extends javax.swing.JFrame {
         String harcSzoveg = "Barlangi Ember támadóereje: " + barlangiTamadoero + "\nRoberto, a Kalandor támadóereje: " + tamadoero;
         String robNyerSzoveg = "\nMeg fogod sebezni a barlangi embert!\nPróbára teszed a szerencséd?";
         String barNyerSzoveg = "\nMeg fog sebezni a barlangi ember!\nPróbára teszed a szerencséd?";
+        String gyozSzoveg = "Nyertél!";
+        String verSzoveg = "Vesztettél!";
+        String barHpKiiras = "Életerő: " + barlangiEletero;
+        String hpKiiras = "Életerő: " + eletero;
+        String kalandlapHpKiiras = eletero + "";
         
         boolean robertoNagyobb = tamadoero > barlangiTamadoero;
         boolean egyenlo = tamadoero == barlangiTamadoero;
-
+        
         ImageIcon blokk = new ImageIcon("blokk.png");
         ImageIcon robnyer = new ImageIcon("robnyer.png");
         ImageIcon barnyer = new ImageIcon("barnyer.png");
         ImageIcon veresegKep = new ImageIcon("gameover.png");
         ImageIcon gyozelemKep = new ImageIcon("victory.png");
-
+        
         if (egyenlo) {
             JOptionPane.showMessageDialog(rootPane, harcSzoveg + "\nBlokkoltátok egymás támadását!", cim, HEIGHT, blokk);
         } else if (robertoNagyobb) {
-            int szerencseHasznalat = JOptionPane.showConfirmDialog(rootPane, harcSzoveg + robNyerSzoveg, cim, YES_NO_OPTION, HEIGHT, robnyer);
-            if (szerencseHasznalat == 0 & szerencse > 0) {
-                
-                sebzes = szerencseKalkulacio(sebzes);
-                szerencse -= 1;
-                lblSzerencse.setText(szerencse + "");
-                
-            }else if (szerencseHasznalat == 0 & szerencse < 1){
-                System.out.println("N");
-            }
+            sebzes = harcKimenetelek(harcSzoveg, robNyerSzoveg, cim, robnyer, sebzes);
+            
             barlangiEletero += sebzes;
-            lblBarHp.setText("Életerő: " + barlangiEletero);
+            lblBarHp.setText(barHpKiiras);
+            lblEletero.setText(kalandlapHpKiiras);
             
-            boolean gyozelem = barlangiEletero < 1;
-            if (gyozelem) {
-                JOptionPane.showMessageDialog(rootPane, "Nyertél!", "Győzelem", HEIGHT, gyozelemKep);
-                btHarc.setEnabled(false);
-            }
-
-        } else if (!robertoNagyobb) {
-            int szerencseHasznalat = JOptionPane.showConfirmDialog(rootPane, harcSzoveg + barNyerSzoveg, cim, YES_NO_OPTION, HEIGHT, barnyer);
-            if (szerencseHasznalat == 0) {
-                
-                barlangiSebzes = szerencseKalkulacio(barlangiSebzes);
-                szerencse -= 1;
-                lblSzerencse.setText(szerencse + "");
-
-            }
-            eletero -= barlangiSebzes;
-            lblRobHp.setText("Életerő: " + eletero);
-            lblEletero.setText(eletero + "");
-            
-            boolean vereseg = eletero < 1;
-            if (vereseg) {
-                JOptionPane.showMessageDialog(rootPane, "Vesztettél!", "Vereség", HEIGHT, veresegKep);
+            boolean vege = barlangiEletero < 1;
+            if (vege) {
+                JOptionPane.showMessageDialog(rootPane, gyozSzoveg, cim, HEIGHT, gyozelemKep);
                 System.exit(0);
-
+            }
+            
+        } else if (!robertoNagyobb) {
+            barlangiSebzes = harcKimenetelek(harcSzoveg, barNyerSzoveg, cim, barnyer, barlangiSebzes);
+            
+            eletero -= barlangiSebzes;
+            lblRobHp.setText(hpKiiras);
+            lblEletero.setText(kalandlapHpKiiras);
+            
+            boolean vege = eletero < 1;
+            if (vege) {
+                JOptionPane.showMessageDialog(rootPane, verSzoveg, cim, HEIGHT, veresegKep);
+                System.exit(0);
             }
         }
-    }//GEN-LAST:event_btHarcActionPerformed
+    }
+
+    private int harcKimenetelek(String harcSzoveg, String barNyerSzoveg, String cim, ImageIcon barnyer, int barlangiSebzes) throws HeadlessException {
+        int szerencseHasznalat = JOptionPane.showConfirmDialog(rootPane, harcSzoveg + barNyerSzoveg, cim, YES_NO_OPTION, HEIGHT, barnyer);
+        boolean vanSzerencse = szerencseHasznalat == 0 & szerencse > 0;
+        boolean nincsSzerencse = szerencseHasznalat == 0 & szerencse < 1;
+        if (vanSzerencse) {
+            
+            barlangiSebzes = szerencseKalkulacio(barlangiSebzes);
+            szerencse -= 1;
+            lblSzerencse.setText(szerencse + "");
+            
+        }else if (nincsSzerencse){
+            System.out.println("N");
+        }
+        return barlangiSebzes;
+    }
 
     private void btKinyitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btKinyitActionPerformed
         ImageIcon kep = new ImageIcon("270. oldal 2.png");
