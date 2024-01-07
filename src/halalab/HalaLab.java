@@ -10,13 +10,14 @@ public class HalaLab extends javax.swing.JFrame {
 
     int mentes = 1;
     boolean gombTilto = true;
+
     int ugyesseg = 6;
     int eletero = 12;
-    int szerencse = 6;
+    int szerencse = 0;
     int tamadoero = 0;
-    int barlangiEletero = 7;
-    int barlangiUgyesseg = 27;
-    int barlangiTamadoero = 0;
+    int ellenfelEletero = 77;
+    int ellenfelUgyesseg = 7;
+    int ellenfelTamadoero = 0;
     int arany = 0;
 
     public HalaLab() {
@@ -713,6 +714,7 @@ public class HalaLab extends javax.swing.JFrame {
         getContentPane().add(btJatek, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, 130, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btKalandlapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btKalandlapActionPerformed
@@ -720,7 +722,7 @@ public class HalaLab extends javax.swing.JFrame {
         gombTilto = true;
         tpJatek.setSelectedIndex(0);
 
-        gombtiltas();
+        gombTiltas();
     }//GEN-LAST:event_btKalandlapActionPerformed
 
     private void btJatekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btJatekActionPerformed
@@ -729,7 +731,7 @@ public class HalaLab extends javax.swing.JFrame {
             tpJatek.setSelectedIndex(mentes);
             gombTilto = false;
 
-            gombtiltas();
+            gombTiltas();
         } else {
             JOptionPane.showMessageDialog(rootPane, "Nem számoltad ki a statjaidat!");
         }
@@ -740,11 +742,11 @@ public class HalaLab extends javax.swing.JFrame {
     }//GEN-LAST:event_tbt66ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        gombtiltas();
+        gombTiltas();
     }//GEN-LAST:event_formWindowOpened
 
     private void tbtUgyessegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtUgyessegActionPerformed
-        int dobas = statKiiras(7);
+        int dobas = doboKocka(7);
 
         ugyesseg = dobas + ugyesseg;
         lblUgyesseg.setText(ugyesseg + "");
@@ -752,7 +754,7 @@ public class HalaLab extends javax.swing.JFrame {
     }//GEN-LAST:event_tbtUgyessegActionPerformed
 
     private void tbtEleteroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtEleteroActionPerformed
-        int dobas = statKiiras(13);
+        int dobas = doboKocka(13);
 
         eletero += dobas;
         lblEletero.setText(eletero + "");
@@ -760,7 +762,7 @@ public class HalaLab extends javax.swing.JFrame {
     }//GEN-LAST:event_tbtEleteroActionPerformed
 
     private void tbtSzerencseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtSzerencseActionPerformed
-        int dobas = statKiiras(7);
+        int dobas = doboKocka(7);
 
         szerencse += dobas;
         lblSzerencse.setText(szerencse + "");
@@ -800,7 +802,7 @@ public class HalaLab extends javax.swing.JFrame {
 
     private void tbt387ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbt387ActionPerformed
         tpJatek.setSelectedIndex(9);
-        lblBarHp.setText("Életerő: " + barlangiEletero);
+        lblBarHp.setText("Életerő: " + ellenfelEletero);
         lblRobHp.setText("Életerő: " + eletero);
     }//GEN-LAST:event_tbt387ActionPerformed
 
@@ -809,23 +811,24 @@ public class HalaLab extends javax.swing.JFrame {
     }//GEN-LAST:event_btHarcActionPerformed
 
     private void harcRendszer() throws HeadlessException {
-        int elsoDobas = statKiiras(7);
-        int masodikDobas = statKiiras(7);
+        int elsoDobas = doboKocka(7);
+        int masodikDobas = doboKocka(7);
         int sebzes = -2;
-        int barlangiSebzes = 2;
+        int ellenfelSebzes = 2;
 
-        barlangiTamadoero = elsoDobas + barlangiUgyesseg;
+        ellenfelTamadoero = elsoDobas + ellenfelUgyesseg;
         tamadoero = masodikDobas + ugyesseg;
 
         String cim = "Harc!!!";
-        String harcSzoveg = "Barlangi Ember támadóereje: " + barlangiTamadoero + "\nRoberto, a Kalandor támadóereje: " + tamadoero;
+        String harcSzoveg = "Barlangi Ember támadóereje: " + ellenfelTamadoero + "\nRoberto, a Kalandor támadóereje: " + tamadoero;
         String robNyerSzoveg = "\nMeg fogod sebezni a barlangi embert!\nPróbára teszed a szerencséd?";
         String barNyerSzoveg = "\nMeg fog sebezni a barlangi ember!\nPróbára teszed a szerencséd?";
+        String blokkSzoveg = "\nBlokkoltátok egymás támadását!";
         String gyozSzoveg = "Nyertél!";
         String verSzoveg = "Vesztettél!";
 
-        boolean robertoNagyobb = tamadoero > barlangiTamadoero;
-        boolean egyenlo = tamadoero == barlangiTamadoero;
+        boolean robertoNagyobb = tamadoero > ellenfelTamadoero;
+        boolean egyenlo = tamadoero == ellenfelTamadoero;
 
         ImageIcon blokk = new ImageIcon("blokk.png");
         ImageIcon robnyer = new ImageIcon("robnyer.png");
@@ -834,71 +837,54 @@ public class HalaLab extends javax.swing.JFrame {
         ImageIcon gyozelemKep = new ImageIcon("victory.png");
 
         if (egyenlo) {
-            JOptionPane.showMessageDialog(rootPane, harcSzoveg + "\nBlokkoltátok egymás támadását!", cim, HEIGHT, blokk);
+            JOptionPane.showMessageDialog(rootPane, harcSzoveg + blokkSzoveg, cim, HEIGHT, blokk);
         } else if (robertoNagyobb) {
-            sebzes = harcKimenetelek(harcSzoveg, robNyerSzoveg, cim, robnyer, sebzes);
-
-            barlangiEletero += sebzes;
-
-            String hpKiiras = "Életerő: " + eletero;
-            String barHpKiiras = "Életerő: " + barlangiEletero;
-            String kalandlapHpKiiras = eletero + "";
-
-            lblBarHp.setText(barHpKiiras);
-            lblRobHp.setText(hpKiiras);
-            lblEletero.setText(kalandlapHpKiiras);
-
-            boolean vege = eletero < 1 || barlangiEletero < 1;
-            if (vege) {
-                if (eletero < barlangiEletero){
-                    JOptionPane.showMessageDialog(rootPane, verSzoveg, cim, HEIGHT, veresegKep);
-                    System.exit(0);
-                }else{
-                    JOptionPane.showMessageDialog(rootPane, gyozSzoveg, cim, HEIGHT, gyozelemKep);
-                    System.exit(0);
-                }
-            }
-
+            sebzes = sebzesKalkulacio(harcSzoveg, robNyerSzoveg, cim, robnyer, sebzes);
+            ellenfelEletero += sebzes;
+            tamadasKimenetel(verSzoveg, cim, veresegKep, gyozSzoveg, gyozelemKep);
         } else if (!robertoNagyobb) {
-            barlangiSebzes = harcKimenetelek(harcSzoveg, barNyerSzoveg, cim, barnyer, barlangiSebzes);
+            ellenfelSebzes = sebzesKalkulacio(harcSzoveg, barNyerSzoveg, cim, barnyer, ellenfelSebzes);
+            eletero -= ellenfelSebzes;
+            tamadasKimenetel(verSzoveg, cim, veresegKep, gyozSzoveg, gyozelemKep);
+        }
+    }
 
-            eletero -= barlangiSebzes;
+    private void tamadasKimenetel(String verSzoveg, String cim, ImageIcon veresegKep, String gyozSzoveg, ImageIcon gyozelemKep) throws HeadlessException {
+        String hpKiiras = "Életerő: " + eletero;
+        String barHpKiiras = "Életerő: " + ellenfelEletero;
+        String kalandlapHpKiiras = eletero + "";
 
-            String hpKiiras = "Életerő: " + eletero;
-            String barHpKiiras = "Életerő: " + barlangiEletero;
-            String kalandlapHpKiiras = eletero + "";
+        lblBarHp.setText(barHpKiiras);
+        lblRobHp.setText(hpKiiras);
+        lblEletero.setText(kalandlapHpKiiras);
 
-            lblBarHp.setText(barHpKiiras);
-            lblRobHp.setText(hpKiiras);
-            lblEletero.setText(kalandlapHpKiiras);
-
-            boolean vege = eletero < 1 || barlangiEletero < 1;
-            if (vege) {
-                if (eletero < barlangiEletero){
-                    JOptionPane.showMessageDialog(rootPane, verSzoveg, cim, HEIGHT, veresegKep);
-                    System.exit(0);
-                }else{
-                    JOptionPane.showMessageDialog(rootPane, gyozSzoveg, cim, HEIGHT, gyozelemKep);
-                    System.exit(0);
-                }
+        boolean vege = eletero < 1 || ellenfelEletero < 1;
+        if (vege) {
+            if (eletero < ellenfelEletero) {
+                JOptionPane.showMessageDialog(rootPane, verSzoveg, cim, HEIGHT, veresegKep);
+                System.exit(0);
+            } else {
+                JOptionPane.showMessageDialog(rootPane, gyozSzoveg, cim, HEIGHT, gyozelemKep);
+                System.exit(0);
             }
         }
     }
 
-    private int harcKimenetelek(String harcSzoveg, String barNyerSzoveg, String cim, ImageIcon barnyer, int barlangiSebzes) throws HeadlessException {
+    private int sebzesKalkulacio(String harcSzoveg, String barNyerSzoveg, String cim, ImageIcon barnyer, int vegsoSebzes) throws HeadlessException {
         int szerencseHasznalat = JOptionPane.showConfirmDialog(rootPane, harcSzoveg + barNyerSzoveg, cim, YES_NO_OPTION, HEIGHT, barnyer);
         boolean vanSzerencse = szerencseHasznalat == 0 & szerencse > 0;
         boolean nincsSzerencse = szerencseHasznalat == 0 & szerencse < 1;
         if (vanSzerencse) {
 
-            barlangiSebzes = szerencseKalkulacio(barlangiSebzes);
+            vegsoSebzes = szerencseKalkulacio(vegsoSebzes);
             szerencse -= 1;
             lblSzerencse.setText(szerencse + "");
 
         } else if (nincsSzerencse) {
-            System.out.println("N");
+            JOptionPane.showMessageDialog(rootPane, "Kifogytál a szerencséből!", cim, HEIGHT);
+
         }
-        return barlangiSebzes;
+        return vegsoSebzes;
     }
 
     private void btKinyitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btKinyitActionPerformed
@@ -915,7 +901,7 @@ public class HalaLab extends javax.swing.JFrame {
         ImageIcon szerencseKep = new ImageIcon("szerencse.png");
         ImageIcon balSZerencseKep = new ImageIcon("balszerencse.png");
 
-        int szerencseDobas = statKiiras(13);
+        int szerencseDobas = doboKocka(13);
         if (szerencseDobas < szerencse) {
             JOptionPane.showMessageDialog(rootPane, "Szerencse", "Szerencse", HEIGHT, szerencseKep);
             sebzes -= 1;
@@ -926,7 +912,7 @@ public class HalaLab extends javax.swing.JFrame {
         return sebzes;
     }
 
-    public int statKiiras(int max) {
+    public int doboKocka(int max) {
         Random rand = new Random();
         int dobas = rand.nextInt(max);
         if (max == 7) {
@@ -943,7 +929,7 @@ public class HalaLab extends javax.swing.JFrame {
         return 0;
     }
 
-    private void gombtiltas() {
+    private void gombTiltas() {
         if (gombTilto == true) {
             btJatek.setEnabled(true);
             btKalandlap.setEnabled(false);
