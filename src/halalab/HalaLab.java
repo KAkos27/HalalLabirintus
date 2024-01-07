@@ -13,9 +13,9 @@ public class HalaLab extends javax.swing.JFrame {
 
     int ugyesseg = 6;
     int eletero = 12;
-    int szerencse = 0;
+    int szerencse = 6;
     int tamadoero = 0;
-    int ellenfelEletero = 77;
+    int ellenfelEletero = 7;
     int ellenfelUgyesseg = 7;
     int ellenfelTamadoero = 0;
     int arany = 0;
