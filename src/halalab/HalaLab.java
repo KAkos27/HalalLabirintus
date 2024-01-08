@@ -831,19 +831,19 @@ public class HalaLab extends javax.swing.JFrame {
         boolean egyenlo = tamadoero == ellenfelTamadoero;
 
         ImageIcon blokk = new ImageIcon("blokk.png");
-        ImageIcon robnyer = new ImageIcon("robnyer.png");
-        ImageIcon barnyer = new ImageIcon("barnyer.png");
+        ImageIcon robNyer = new ImageIcon("robnyer.png");
+        ImageIcon barNyer = new ImageIcon("barnyer.png");
         ImageIcon veresegKep = new ImageIcon("gameover.png");
         ImageIcon gyozelemKep = new ImageIcon("victory.png");
 
         if (egyenlo) {
             JOptionPane.showMessageDialog(rootPane, harcSzoveg + blokkSzoveg, cim, HEIGHT, blokk);
         } else if (robertoNagyobb) {
-            sebzes = sebzesKalkulacio(harcSzoveg, robNyerSzoveg, cim, robnyer, sebzes);
+            sebzes = sebzesKalkulacio(harcSzoveg, robNyerSzoveg, cim, robNyer, sebzes);
             ellenfelEletero += sebzes;
             tamadasKimenetel(verSzoveg, cim, veresegKep, gyozSzoveg, gyozelemKep);
         } else if (!robertoNagyobb) {
-            ellenfelSebzes = sebzesKalkulacio(harcSzoveg, barNyerSzoveg, cim, barnyer, ellenfelSebzes);
+            ellenfelSebzes = sebzesKalkulacio(harcSzoveg, barNyerSzoveg, cim, barNyer, ellenfelSebzes);
             eletero -= ellenfelSebzes;
             tamadasKimenetel(verSzoveg, cim, veresegKep, gyozSzoveg, gyozelemKep);
         }
@@ -870,8 +870,8 @@ public class HalaLab extends javax.swing.JFrame {
         }
     }
 
-    private int sebzesKalkulacio(String harcSzoveg, String barNyerSzoveg, String cim, ImageIcon barnyer, int vegsoSebzes) throws HeadlessException {
-        int szerencseHasznalat = JOptionPane.showConfirmDialog(rootPane, harcSzoveg + barNyerSzoveg, cim, YES_NO_OPTION, HEIGHT, barnyer);
+    private int sebzesKalkulacio(String harcSzoveg, String gyozelemSzoveg, String cim, ImageIcon nyertesKep, int vegsoSebzes) throws HeadlessException {
+        int szerencseHasznalat = JOptionPane.showConfirmDialog(rootPane, harcSzoveg + gyozelemSzoveg, cim, YES_NO_OPTION, HEIGHT, nyertesKep);
         boolean vanSzerencse = szerencseHasznalat == 0 & szerencse > 0;
         boolean nincsSzerencse = szerencseHasznalat == 0 & szerencse < 1;
         if (vanSzerencse) {
